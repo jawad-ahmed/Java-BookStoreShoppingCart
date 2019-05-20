@@ -63,7 +63,7 @@ public class CartController extends HttpServlet {
 		throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		int index = Integer.parseInt(request.getParameter("index"));
-		ShoppingCart cart = (ShoppingCart)session.getAttribute("Cart");
+		ShoppingCart cart = (ShoppingCart)session.getAttribute("cart");
 		cart.deleteCartItem(index);
 	}
 
