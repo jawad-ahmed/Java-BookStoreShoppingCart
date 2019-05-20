@@ -2,6 +2,7 @@ package com.pluralsight;
 
 import java.util.ArrayList;
 import javax.inject.Inject;
+import javax.persistence.Index;
 
 public class ShoppingCart {
  @Inject
@@ -28,6 +29,14 @@ public class ShoppingCart {
    cartItem = cartItems.get(iItemIndex);
   }
   return cartItem;
+ }
+
+ public void deleteCartItem(int index) {
+  try {
+   cartItems.remove(index);
+  } catch (IndexOutOfBoundsException e) {
+   e.printStackTrace();
+  }
  }
 
  public ArrayList<CartItem> getCartItems() {
